@@ -23,3 +23,13 @@ const server = Bun.serve({
 });
 
 console.log(`Listening on ${server.url}`);
+
+const shutdown = (signal: string) => {
+  console.log(`Received ${signal}, shutting down...`);
+  server.stop();
+  process.exit(0);
+};
+
+process.on("SIGTERM", () => shutdown("SIGTERM"));
+process.on("SIGINT", () => shutdown("SIGINT"));
+process.on("SIGQUIT", () => shutdown("SIGQUIT"));

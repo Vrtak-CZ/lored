@@ -1,7 +1,7 @@
 import { parseTarget } from "./parser";
 
 const server = Bun.serve({
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 8080,
   routes: {
     "/": () => {
       return new Response("Coffee!", { status: 418 });

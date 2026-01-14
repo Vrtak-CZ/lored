@@ -5,6 +5,6 @@ WORKDIR /app
 COPY index.ts parser.ts ./
 
 # Set environment and run
-ENV PORT=3000
-EXPOSE 3000
+ENV PORT=8080
+EXPOSE 8080
 CMD ["bun", "run", "index.ts"]

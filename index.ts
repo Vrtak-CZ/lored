@@ -9,13 +9,14 @@ const server = Bun.serve({
   },
   fetch: (req) => {
     const url = new URL(req.url);
-    console.dir({ url });
     const source = url.pathname + url.search;
     const target = parseTarget(source);
     
     if (!target) {
       return new Response("Not found!", { status: 404 });
     }
+
+    console.log(`Redirecting to ${target.toString()}`);
 
     return new Response(`Redirecting to ${target.toString()}`, { status: 302, headers: { 'Location': target.toString() } });
   }

@@ -36,13 +36,13 @@ docker build -t lored .
 ### Run the container
 
 ```bash
-docker run -p 3000:3000 lored
+docker run -p 8080:8080 lored
 ```
 
 ### Custom port
 
 ```bash
-docker run -p 8080:8080 -e PORT=8080 lored
+docker run -p 3000:3000 -e PORT=3000 lored
 ```
 
 ## Local Development

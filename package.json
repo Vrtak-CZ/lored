@@ -1,11 +1,13 @@
 {
   "name": "lored",
+  "version": "1.0.0",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "bun run --watch index.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "push": "bun run push.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
